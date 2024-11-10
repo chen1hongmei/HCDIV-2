@@ -1,113 +1,144 @@
-<!doctype html>
-<html>
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Assignment 1</title>
-  <style>
-    
-    body {
-      font-family: 'Times New Roman', sans-serif; 
-      font-size: 20px;  
-      text-align: center;
-      padding-top: 50px;
-      background-color:rgb(217, 174, 200)   
-    }
-
-    h2,h3, h4{
-      font-family: 'Georgia', serif;   
-      font-weight: bold;
-    color: blue;                  
-    }
-
-    table {
-      width: 50%;
-      margin: 20px auto;
-      border-collapse: collapse;
-      font-family: 'Verdana', sans-serif;  
-    }
-
-    th, td {
-      border: 1px solid black;
-      padding: 10px;
-      text-align: center;
-      font-size: 14px;  
-    }
-
-    th {
-      background-color: #d3de8c;
-      font-weight: bold;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            font-family: Times New Roman, sans-serif;
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+        }
+        .slide {
+            display: none;
+        }
+        .slide img {
+            width: 100%;
+            height: auto;
+        }
+        .info {
+            text-align: center;
+            padding: 10px;
+            background: #f4f4f4;
+        }
+        .toggle-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        button {
+            padding: 8px 16px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
+    <h1>HCDIV Assignment 2 Critique of visualizations</h1>
+    <h5>Chen hongmei</h5>
+    <p> This diagram is created to show the list of design competencies taught in school, throughout the undergraduate period. There are 3 components presented: 1) list of courses, 2) list of design competencies, and 3) whether the competencies are being introduced/ taught/ assessed/ expected in the courses.   </p>
+    <div class="slideshow-container">
+        <!-- Slide 1 -->
+        <div class="slide">
+            <p> The diagram shows the list of courses as circle radiuses and the list of competencies are in the outermost circumference. If the competencies are taught in a class, a 'dot' will be marked on that course's radius. The lines of the same color marks the courses are in the same term. </p>
+            <img src="IMG1.png" alt="1. Undergraduate curriculum view">
+            <div class="info">
+        
+                <div class="pros">
+                    <h3>Pros: </h3>
+                        <li> The visualisation is able to show "gaps" in the curriculum at a quick glance, where the lines are not connected</li></div>
+                <div class="cons" style="display: none;">
+                    <h3> Cons: </h3>
+                        <li> Too much information, leading to no information. As there are a lot information happening, there is no space to annotate what means what, this results in the diagram to be meaningless. In fact, the author needs to describe what the diagram do in another paragraph, and the paragraph is not a short one. </li>
+                        <li> As such, the words for list of competencies cant be fit into the outermost circumference of the circle. So eventho we can identify the gaps, we cannot identify what the gap is. </li> 
+                        <li> In my opinion, the colours make it less readable. One colour for each course, and yet they are connected by different coloured lines, may make the "dot" to indicate the course itself to be not visible.</li>
+                        <li> The size of the image needs to be humongous to have the inner circles readible. Legibility is a huge problem.</li>
+                    <h3> Suggestion:</h3>
+                        <p> Colors and especially the coloured lines are chart junk to me, can remove them. Reduce the amount of information that is being shown. If the purpose of the visualisation to show the missing gaps, considering a sunburst diagram below is better and easier to locate the gaps. </p>
+                        <img src="IMG3.png" alt="Sunburst Diagram">
+                    
+                </div>
+            </div>
+            <div class="toggle-buttons">
+                <button onclick="showPros(0)">Show Pros</button>
+                <button onclick="showCons(0)">Show Cons</button>
+            </div>
+        </div>
 
-<h2 style="text-align:center;">Singapore 2-hr Weather Forecast</h2>
-<h3 style="text-align:center;">CHEN HONGMEI</h3>
+        <!-- Slide 2 -->
+        <div class="slide">
+            <p> The diagram shows the list of courses as rows and list of competencies as columns. Each competency is divided into 4 sections introduced (I), taught (T), assessed (A), and expected (E). The diagram is also made to show gaps in the curriculum in a table format. </p>
+            <img src="IMG2.png" alt="ITAE Table">
+            <div class="info">
+                <div class="pros">
+                    <h3> Pros: </h3>
+                        <li> The data is much more visible. People can easily identify the gaps, trace it back to which competency is it and which courses did not teach it.</li>
+                        <li> The competencies are differentiated by colors, to differentiate their different stages in a design process. A good information to add without disrupting the main information to be portrayed</li>
+                </div>
+                <div class="cons" style="display: none;">
+                    <h3> Cons: </h3>
+                        <li> The colours may be misleading. "Expected" carries the least weight to the instructors, therefore it is of lightest colour. Readers may thought the order is expected, introduced, taught, and assessed, hence misreading where the gaps actually are. </li>
+                        <li> The visualisation is not effective for long list of competencies/ courses as the reader need to scroll sideways/ downward for full information. </li>
+                  <h3> Suggestions </h3>
+                    <li> The first issue can be solved by reordering the I/T/A/E to E/I/T/A to minimise this misleading through the colour choices. It also gives the colour intensity meaning, adding depth to the visualisation. </li>
+                    <li> The second issue can be solved by repurposing the diagram. Instead of showing the overall gap through all courses and all design stages, the diagram can be used to show focused information. For example, only to show information one design stage or for courses in 1 term instead of full duration. </li>
+    
+                    </div>
+            </div>
+            <div class="toggle-buttons">
+                <button onclick="showPros(1)">Show Pros</button>
+                <button onclick="showCons(1)">Show Cons</button>
+            </div>
+        </div>
 
-<!-- Display last updated and valid to time -->
-<h4 id="timestring" style="text-align:center;"></h4>
-<h4 id="validTo" style="text-align:center;"></h4>
+        <!-- Add more slides as needed -->
 
-<!-- Table to display the weather data -->
-<table id="weatherTable" align="center">
-  <tr>
-    <th>Area</th>
-    <th>Forecast</th>
-  </tr>
-</table>
+        <!-- Navigation buttons -->
+        <button onclick="prevSlide()">Previous</button>
+        <button onclick="nextSlide()">Next</button>
+    </div>
 
-<script>
-  // Fetch the 2-hour weather forecast data
-  fetch('https://api.data.gov.sg/v1/environment/2-hour-weather-forecast')
-    .then(response => response.json())
-    .then(responsedata => {
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
 
-      // Extract the timestamp, valid to, and forecast data
-      let timestamp = responsedata.items[0].update_timestamp;
-      let validTo = responsedata.items[0].valid_period.end;
-      let forecasts = responsedata.items[0].forecasts;
-
-      // Display the last updated time
-      let timestring = document.getElementById('timestring');
-      timestring.innerHTML = "Last updated at: " + new Date(timestamp).toLocaleString();
-
-      // Reference to the weather table
-      let weatherTable = document.getElementById('weatherTable');
-
-      // Loop through each forecast and add a row in the table
-      forecasts.forEach(forecast => {
-        let row = weatherTable.insertRow();  // Create a new row
-        let cell1 = row.insertCell(0);  // Create the first cell (Area)
-        let cell2 = row.insertCell(1);  // Create the second cell (Forecast)
-
-        cell1.innerHTML = forecast.area;  // Fill in the area
-        cell1.setAttribute('data-area', forecast.area.toLowerCase());  // For search filtering
-        cell2.innerHTML = forecast.forecast;  // Fill in the forecast
-      });
-    })
-    .catch(error => {
-      console.error('Error fetching weather data:', error);
-    });
-
-  // Function to filter table based on search input
-  function filterTable() {
-    let input = document.getElementById('searchInput').value.toLowerCase();
-    let table = document.getElementById('weatherTable');
-    let tr = table.getElementsByTagName('tr');
-
-    // Loop through all table rows, and hide those who don't match the search query
-    for (let i = 1; i < tr.length; i++) {
-      let td = tr[i].getElementsByTagName('td')[0];  // Get the first column (Area)
-      if (td) {
-        let area = td.getAttribute('data-area');
-        if (area.indexOf(input) > -1) {
-          tr[i].style.display = '';
-        } else {
-          tr[i].style.display = 'none';
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = i === index ? 'block' : 'none';
+            });
         }
-      }
-    }
-  }
-</script>
 
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function showPros(slideIndex) {
+            const slide = slides[slideIndex];
+            slide.querySelector('.pros').style.display = 'block';
+            slide.querySelector('.cons').style.display = 'none';
+        }
+
+        function showCons(slideIndex) {
+            const slide = slides[slideIndex];
+            slide.querySelector('.pros').style.display = 'none';
+            slide.querySelector('.cons').style.display = 'block';
+        }
+
+        // Initialize first slide
+        showSlide(currentSlide);
+    </script>
 </body>
 </html>
