@@ -1,144 +1,19 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>HCDIV Assignment 2</title>
-
-    <style>
-        body {
-            font-family: Times New Roman, sans-serif;
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-        }
-        .slideshow-container {
-            position: relative;
-            max-width: 100%;
-            margin: auto;
-        }
-        .slide {
-            display: none;
-        }
-        .slide img {
-            width: 100%;
-            height: auto;
-        }
-        .info {
-            text-align: center;
-            padding: 10px;
-            background: #f4f4f4;
-            background: #a1b88e;
-        }
-        .toggle-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 10px;
-        }
-        button {
-            padding: 8px 16px;
-            cursor: pointer;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HCDIV Assignment 2 </title>
+ 
 </head>
 <body>
+
+  <div id="content">
     <h1>HCDIV Assignment 2 Critique of visualizations</h1>
     <h5>Chen hongmei</h5>
-    <p>  </p>
-    <div class="slideshow-container">
-        <!-- Slide 1 -->
-        <div class="slide">
-            <p> 3D charts have some issues with accurately displaying data values ​​because 3D visuals are difficult for our human eyes to understand. This pie chart makes the second half appear larger than the first half, even though the actual value is 30% to 35%. </p>
-            <img src="IMG1.png">
-            <div class="info">
-        
-                <div class="pros">
-                    <h3>Pros: </h3>
-                        <li> The visualisation is able to show "gaps" in the curriculum at a quick glance, where the lines are not connected</li></div>
-                <div class="cons" style="display: none;">
-                    <h3> Cons: </h3>
-                        <li> Too much information, leading to no information. As there are a lot information happening, there is no space to annotate what means what, this results in the diagram to be meaningless. In fact, the author needs to describe what the diagram do in another paragraph, and the paragraph is not a short one. </li>
-                        <li> As such, the words for list of competencies cant be fit into the outermost circumference of the circle. So eventho we can identify the gaps, we cannot identify what the gap is. </li> 
-                        <li> In my opinion, the colours make it less readable. One colour for each course, and yet they are connected by different coloured lines, may make the "dot" to indicate the course itself to be not visible.</li>
-                        <li> The size of the image needs to be humongous to have the inner circles readible. Legibility is a huge problem.</li>
-                    <h3> Suggestion:</h3>
-                        <p> Colors and especially the coloured lines are chart junk to me, can remove them. Reduce the amount of information that is being shown. If the purpose of the visualisation to show the missing gaps, considering a sunburst diagram below is better and easier to locate the gaps. </p>
-                        <img src="IMG3.png">
-                    
-                </div>
-            </div>
-            <div class="toggle-buttons">
-                <button onclick="showPros(0)">Show Pros</button>
-                <button onclick="showCons(0)">Show Cons</button>
-            </div>
-        </div>
+    Detailed information will be awaited
+    <div id="cases-container"></div>
+  </div>
 
-        <!-- Slide 2 -->
-        <div class="slide">
-            <p> The diagram shows the list of courses as rows and list of competencies as columns. Each competency is divided into 4 sections introduced (I), taught (T), assessed (A), and expected (E). The diagram is also made to show gaps in the curriculum in a table format. </p>
-            <img src="IMG2.png">
-            <div class="info">
-                <div class="pros">
-                    <h3> Pros: </h3>
-                        <li> The data is much more visible. People can easily identify the gaps, trace it back to which competency is it and which courses did not teach it.</li>
-                        <li> The competencies are differentiated by colors, to differentiate their different stages in a design process. A good information to add without disrupting the main information to be portrayed</li>
-                </div>
-                <div class="cons" style="display: none;">
-                    <h3> Cons: </h3>
-                        <li> The colours may be misleading. "Expected" carries the least weight to the instructors, therefore it is of lightest colour. Readers may thought the order is expected, introduced, taught, and assessed, hence misreading where the gaps actually are. </li>
-                        <li> The visualisation is not effective for long list of competencies/ courses as the reader need to scroll sideways/ downward for full information. </li>
-                  <h3> Suggestions </h3>
-                    <li> The first issue can be solved by reordering the I/T/A/E to E/I/T/A to minimise this misleading through the colour choices. It also gives the colour intensity meaning, adding depth to the visualisation. </li>
-                    <li> The second issue can be solved by repurposing the diagram. Instead of showing the overall gap through all courses and all design stages, the diagram can be used to show focused information. For example, only to show information one design stage or for courses in 1 term instead of full duration. </li>
-    
-                    </div>
-            </div>
-            <div class="toggle-buttons">
-                <button onclick="showPros(1)">Show Pros</button>
-                <button onclick="showCons(1)">Show Cons</button>
-            </div>
-        </div>
-
-        <!-- Add more slides as needed -->
-
-        <!-- Navigation buttons -->
-        <button onclick="prevSlide()">Previous</button>
-        <button onclick="nextSlide()">Next</button>
-    </div>
-
-    <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.style.display = i === index ? 'block' : 'none';
-            });
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        }
-
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            showSlide(currentSlide);
-        }
-
-        function showPros(slideIndex) {
-            const slide = slides[slideIndex];
-            slide.querySelector('.pros').style.display = 'block';
-            slide.querySelector('.cons').style.display = 'none';
-        }
-
-        function showCons(slideIndex) {
-            const slide = slides[slideIndex];
-            slide.querySelector('.pros').style.display = 'none';
-            slide.querySelector('.cons').style.display = 'block';
-        }
-
-        // Initialize first slide
-        showSlide(currentSlide);
-    </script>
 </body>
 </html>
