@@ -4,34 +4,80 @@
     <meta charset="UTF-8" />
     <title>HCDIV Assignment 2</title>
     <style type="text/css">
-        div
-        {
-
-            text-align: center; 
+        body {     
+            text-align: center;
             background-color: #87CEFA;
-            width:100%;
-            height:100%;
+            margin: 0;
+            padding: 20px;
         }
-        img
-        {
-            width: 400px;
-            height: 200px;
-            border: 3px solid rgb(118, 224, 191);
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px; /* Add space between containers */
+        }
+
+        .image-left, .image-right {
+            width: 600px;
+            height: 300px;
+            margin: 0 10px; /* Add space between images */
+        }
+
+        .arrow-right {
+            width: 50px; /* Adjust the size of the arrow as needed */
+            height: auto;
+        }
+
+        img {
+            display: block; /* Remove extra space below images */
         }
     </style>
 </head>
 <body>
     <h1>HCDIV Assignment 2 Critique of visualizations</h1>
-        <h5>Chen hongmei(The page is being upgraded)</h5>
-    <div> 
-        <float:left;><img src="IMG5.png" alt="image of case 1" title="image of case 1"/></float:left>  
-        <float:right><img src="IMG6.png" alt="image of case 1" title="image of case 1"/></float:right>;
-        <p><a href="index1.html">Go to Case 1</a></p>
+    <h5>Chen hongmei(The page is being upgraded)</h5>
+    <div class="container">
+        <img class="image-left" src="IMG5.png" alt="image of case 1" title="image of case 1"/>
+        <img class="arrow-right" src="arrow.jfif" alt="Right Arrow"/>
+        <img class="image-right" src="IMG6.png" alt="image of case 2" title="image of case 2"/>
     </div>
-    <div>
-        <float:left;><img src="IMG4.jpg" alt="image of case 1" title="image of case 2"/></float:left>  
-        <float:right><img src="IMG3.jpg" alt="image of case 1" title="image of case 3"/></float:right>;
-        <p><a href="index.html">Go to Case 2</a></p>
+    <h3>Case 1 Analysis</h3>
+    <table style="margin-left: auto; margin-right: auto;">
+        <tr>
+         <td><H2>issue</H2> </td>
+         <td><h2>Suggestions for improvement</h2></td>
+        </tr>
+        <tr>
+          <td>Using images as backgrounds can make charts look unclear</td>
+          <td>Replace pictures with solid colors</td>
+        </tr>
+        <tr>
+          <td>The base starts from 37%, causing the gap between the two data to look widening.</td>
+          <td>The base should start from 0 to reflect a more realistic gap.</td>
+        </tr>
+    </table>
+</br/>
+</br>
+    <div class="container">
+        <img class="image-left" src="IMG4.jpg" alt="image of case 2" title="image of case 2"/>
+        <img class="arrow-right" src="arrow.jfif" alt="Right Arrow"/>
+        <img class="image-right" src="IMG3.jpg" alt="image of case 2" title="image of case 2"/>
     </div>
+    <h3>Case 2 Analysis</h3>
+    <table style="margin-left: auto; margin-right: auto;">
+        <tr>
+          <td><H2>issue</H2> </td>
+          <td><h2>Suggestions for improvement</h2></td>
+        </tr>
+        <tr>
+          <td>The base starts from 37%, causing the gap between the two data to look widening.</td>
+          <td>The base should start from 0 to reflect a more realistic gap.</td>
+        </tr>
+        <tr>
+          <td>The different styles of each channel can easily cause people to misunderstand the size of the data value.</td>
+          <td>Use concise channels to display data more clearly</td>
+        </tr>
+    </table>
 </body>
 </html>
